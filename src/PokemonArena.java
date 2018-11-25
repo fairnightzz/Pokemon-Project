@@ -1,11 +1,10 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class PokemonArena {
     public static void main(String[] args) {
-        
 
+        System.out.println("Pokemon Project");
 
-        System.out.println("Hello World!");
     }
 }
