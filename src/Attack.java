@@ -1,3 +1,10 @@
+//Zhehai Zhang
+//ICS4U -01 Pokemon Project
+//December 12th, 2018
+
+//Attack Class
+//Keeps track attacks and its info
+
 public class Attack {
     public final String name;
     public final int energyCost;
