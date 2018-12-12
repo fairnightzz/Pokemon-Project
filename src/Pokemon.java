@@ -48,8 +48,12 @@ public class Pokemon {
     }
 
     public boolean attack(Pokemon enemy){
-        if (checkAttack() && bot == 0){
+        if (noAttack() && bot == 0){
             System.out.println("You do not have enough energy to make an attack!");
+            return false;
+        }
+        else if (noAttack()){
+            //System.out.print("Test");
             return false;
         }
         if (isStunned()){
@@ -79,6 +83,7 @@ public class Pokemon {
                 for (int i = 0; i<attacks.size();i++){
                     if (attacks.get(i).energyCost<=energy){
                         option = i;
+                        System.out.println("Bot chose "+attacks.get(i).name+"!");
                         break;
                     }
                 }
@@ -203,10 +208,10 @@ public class Pokemon {
         stun = 0;
     }
 
-    public boolean dead(){
+    public boolean KO(){
         return health == 0;
     }
-    private boolean checkAttack(){
+    private boolean noAttack(){
         int min = 9999;
         //System.out.println("Checking attack");
         for (int i = 0;i<attacks.size();i++){
@@ -216,7 +221,7 @@ public class Pokemon {
             }
         }
         //System.out.println("True");
-        return min > energy;
+        return (min > energy);
     }
     public boolean recharge(int amount){
         energy+=amount;
